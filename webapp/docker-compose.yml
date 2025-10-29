@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  # GemmaPy Frontend WebApp
+  webapp:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: gemmapp-webapp
+    ports:
+      - "3000:3000"
+    environment:
+      VITE_API_URL: http://api:5000
+      VITE_API_TIMEOUT: 30000
+      VITE_LOG_LEVEL: info
+      VITE_ENABLE_RAG: "true"
+      VITE_ENABLE_COMPARISON: "true"
+      VITE_ENABLE_METRICS: "true"
+    depends_on:
+      - api
+    restart: unless-stopped
+    networks:
+      - gemmapp-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # GemmaPy API
+  api:
+    build:
+      context: .
+      dockerfile: ./src/Dockerfile
+    container_name: gemmapp-api
+    ports:
+      - "5000:5000"
+    environment:
+      FLASK_ENV: production
+      FLASK_DEBUG: "0"
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+    depends_on:
+      - ollama
+    restart: unless-stopped
+    networks:
+      - gemmapp-network
+
+  # Ollama Service for LLM Inference
+  ollama:
+    image: ollama/ollama:latest
+    container_name: gemmapp-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+    networks:
+      - gemmapp-network
+
+networks:
+  gemmapp-network:
+    driver: bridge
+
+volumes:
+  ollama_data:
+    driver: local
