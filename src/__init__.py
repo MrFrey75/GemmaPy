@@ -1,12 +1,12 @@
 """
 GemmaPy - Production-ready Python REST API with LLM integration
 
-Version: 1.0.0
-Release Date: October 29, 2025
+Version: 1.1.0-dev
+Release Date: TBD
 License: MIT
 """
 
-__version__ = '1.0.0'
+__version__ = '1.1.0-dev'
 __author__ = 'GemmaPy Development Team'
 __license__ = 'MIT'
-__status__ = 'Production'
+__status__ = 'Development'

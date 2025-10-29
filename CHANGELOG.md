@@ -188,3 +188,53 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 **Release Date:** October 29, 2025  
 **Status:** ✅ Production Ready  
 **Maintainer:** GemmaPy Development Team
+
+## [Unreleased] - v1.1.0
+
+### Status: In Development
+
+**Branch:** develop/v1.1  
+**Target Release:** Q1 2026
+
+### Planned
+
+#### Infrastructure
+- Docker containerization with docker-compose
+- Database migrations (Alembic)
+- Redis caching layer (optional)
+- API rate limiting
+- Request/response logging
+- Prometheus metrics export
+
+#### Features
+- A/B Testing Framework
+- Fine-Tuning Support (basic)
+- OpenAPI/Swagger documentation
+- API client libraries
+- Parallel model execution
+- Email notifications
+- Password reset
+- Two-factor authentication
+
+#### Developer Experience
+- Postman collection
+- Development docker-compose
+- Hot reload in development
+- Better error messages
+- Code refactoring (blueprints)
+
+#### Security
+- API key authentication
+- Rate limiting per user
+- IP whitelisting
+- Audit logging
+- Security headers
+
+#### Testing
+- Integration tests
+- Load testing scripts
+- CI/CD pipeline (GitHub Actions)
+- Automated security scanning
+
+---
+

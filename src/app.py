@@ -140,9 +140,9 @@ def health():
 def version():
     """Get API version information"""
     return jsonify({
-        'version': '1.0.0',
-        'release_date': '2025-10-29',
-        'status': 'Production',
+        'version': '1.1.0-dev',
+        'release_date': 'TBD',
+        'status': 'Development',
         'python_version': '3.8+',
         'features': {
             'authentication': True,
