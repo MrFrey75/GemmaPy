@@ -136,6 +136,29 @@ def create_user():
 def health():
     return jsonify({'status': 'healthy'}), 200
 
+@app.route('/api/version', methods=['GET'])
+def version():
+    """Get API version information"""
+    return jsonify({
+        'version': '1.0.0',
+        'release_date': '2025-10-29',
+        'status': 'Production',
+        'python_version': '3.8+',
+        'features': {
+            'authentication': True,
+            'profiles': True,
+            'ollama': True,
+            'caching': True,
+            'retry': True,
+            'rag': True,
+            'metrics': True,
+            'costs': True,
+            'conversations': True,
+            'templates': True,
+            'comparison': True
+        }
+    }), 200
+
 # Profile management endpoints
 @app.route('/api/profile', methods=['GET'])
 @require_auth

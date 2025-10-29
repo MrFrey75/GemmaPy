@@ -2,10 +2,13 @@
 
 **Production-ready Python REST API with advanced LLM integration**
 
+[![Version](https://img.shields.io/badge/version-1.0.0-blue)](VERSION)
 [![Tests](https://img.shields.io/badge/tests-218%20passing-success)](tests/)
 [![Coverage](https://img.shields.io/badge/coverage-93%25-brightgreen)](tests/)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+**Version 1.0.0** - Released October 29, 2025
 
 A comprehensive REST API featuring JWT authentication, role-based access control, and extensive Ollama/LLM integration with caching, retry logic, RAG, metrics tracking, and multi-model comparison.
 
@@ -205,3 +208,14 @@ Built with [Flask](https://flask.palletsprojects.com/), [Ollama](https://ollama.
 **⭐ Star this repo if you find it helpful!**
 
 **Built with ❤️ using Python and Flask**
+
+---
+
+## 📋 Version Information
+
+- **Current Version:** 1.0.0
+- **Release Date:** October 29, 2025
+- **Status:** Production Ready
+- **Changelog:** [CHANGELOG.md](CHANGELOG.md)
+- **Release Notes:** [RELEASE.md](RELEASE.md)
+
